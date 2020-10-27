@@ -4,6 +4,7 @@ import NavBar from "../../features/nav/NavBar";
 import ActivityDashboard from "../../features/activities/dashboard/ActivityDashboard";
 import LoadingComponent from "./LoadingComponent";
 import ActivityStore from "../stores/activityStore";
+import {observer} from 'mobx-react-lite';
 
 const App = () => {
   const activityStore = useContext(ActivityStore);
@@ -24,4 +25,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default observer(App);

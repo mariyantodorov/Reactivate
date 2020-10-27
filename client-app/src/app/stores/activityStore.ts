@@ -1,4 +1,4 @@
-import { action, observable, computed, configure, runInAction } from "mobx";
+import { action, observable, computed, configure, runInAction, makeObservable } from "mobx";
 import { createContext, SyntheticEvent } from "react";
 import agent from "../api/agent";
 import { IActivity } from "../models/activity";
@@ -13,6 +13,10 @@ class ActivityStore {
   @observable editMode = false;
   @observable submitting = false;
   @observable target = '';
+
+  constructor() {
+    makeObservable(this)
+  }
 
   @computed get activitiesByDate() {
     return Array.from(this.activityRegistry.values()).sort(

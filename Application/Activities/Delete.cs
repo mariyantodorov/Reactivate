@@ -16,6 +16,7 @@ namespace Application.Activities
         public class Hanlder : IRequestHandler<Command>
         {
             private readonly DataContext _context;
+            
             public Hanlder(DataContext context)
             {
                 _context = context;
